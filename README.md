@@ -7,8 +7,8 @@ The main objective of the game is to give the player a score related to speed an
 Player will receive a screen with the different choices of colours and forms with the different scores. It will have a short time to see what are the highest score and then screen will change. There will be the different forms with colours, player will have 3 choices to do in 4 seconds getting a score from the taken choices. 
 
 ## Backlog
-### Choose score.
-- Choose randomly the score for the objects a colour.
+### Choose poinst.
+- Choose randomly the points for the objects a colour.
 
 ### Print in the screen.
 - Print in the screen the objects and colours that had been choose randomly.
@@ -18,38 +18,38 @@ Player will receive a screen with the different choices of colours and forms wit
 
 ### New score.
 - Second scores in advance won’t be random. They will depend on the previous user choices.
+	figureChooser()
 
-### Final scree.
+### Final screen.
 - Final screen will show the total score and the user most chosen objects and colors. 
 
 ## Data structure
 ### Game
---- JS 
-	Function Game(score, ){
-
-	figures
-	position
-	score
-	timeOut
-	clickOut
+game.js 
+```
+	function Game(){
+	  figures
+	  score
+	  timeOut
+	  clickOut
 	}
-	ClearScores()
+	clearScores()
 	drawScores()
-	ClearGame()
+	clearGame()
 	drawGame()
 	start()
 	randomFigures()
 	timeOut()
 	scoreCounter()
-	figureChooser()
+  figureClick()
+  ```
 
 ### Figures
 ----JS
 	Function Figures (){
-    
 		colour
-		position
 		shape
+    points
 	}
 	draw()
 
