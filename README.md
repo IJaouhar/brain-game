@@ -1,9 +1,22 @@
-Brany Game
-Description
+# Brany Game
+## Description
 Simple game base on DOM and CSS. 
 The main objective of the game is to give the player a score related to speed and mental agility, doing simple mathematical calculations and choosing the objects with the highest score.
 
-MVP (DOM)
+## MVP (DOM)
+
+
+## Backlog
+ - CSS and HTML of the start screen.
+ - Funtions destroyStartScreen and lunchGameScreen once Start buttom is click.
+ - Game, Player, Object clases.
+ - Funtions to generate random Object and color.
+ - Funtions to count scores and countdown time.
+ - CSS and HTML for Game screen.
+ - Funtions destroyGameScreen and lunchGoScreen once time is over.
+ - Funtions destroyGoScreen and lunchStartScreen once Restart buttom is click.
+
+## States y States Transitions
 - Start screen.
   - Start buttom to take you game screen.
   - Funtion to destroy start screen and launch game screen.
@@ -19,25 +32,12 @@ MVP (DOM)
   - Restart buttom.
   - Funtion to destroy Game over screen and launch game screen.
   - Finish buttom.
-
-Backlog
- - CSS and HTML of the start screen.
- - Funtions destroyStartScreen and lunchGameScreen once Start buttom is click.
- - Game, Player, Object clases.
- - Funtions to generate random Object and color.
- - Funtions to count scores and countdown time.
- - CSS and HTML for Game screen.
- - Funtions destroyGameScreen and lunchGoScreen once time is over.
- - Funtions destroyGoScreen and lunchStartScreen once Restart buttom is click.
-
-States y States Transitions
-Definition of the different states and their transition (transition functions)
-
-splashScreen
+  
+## SplashScreen
 gameScreen
 gameoverScreen
 
-Task
+## Task
  - Choose project.
  - Decide technology.
  - Create folders.
@@ -49,11 +49,11 @@ Task
  - Test.
  - Impruve.
 
-Links
+## Links
 https://trello.com/b/t8CO6kLh/juego-dom
 
-Git
+## Git
 https://github.com/mavericucu/brain-game
 
-Slides
+## Slides
 URls for the project presentation (slides) Link Slides.com
