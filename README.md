@@ -45,14 +45,15 @@ game.js
   ```
 
 ### Figures
-----JS
+figures.js
+```
 	Function Figures (){
 		colour
 		shape
     points
 	}
 	draw()
-
+```
 
 ## States y States Transitions
 Definition of the different states and their transition (transition functions)
