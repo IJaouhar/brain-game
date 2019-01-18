@@ -1,4 +1,4 @@
-Brainy Game
+#Brainy Game
 Description
 Simple game base on DOM and CSS. 
 The main objective of the game is to give the player a score related to speed and mental agility, doing simple mathematical calculations and choosing the objects with the highest score.
