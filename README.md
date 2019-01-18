@@ -1,86 +1,93 @@
-<<<<<<< HEAD
-# Brany Game
+# Brainy Game
 ## Description
 Simple game base on DOM and CSS. 
 The main objective of the game is to give the player a score related to speed and mental agility, doing simple mathematical calculations and choosing the objects with the highest score.
 
 ## MVP (DOM)
-
+Player will receive a screen with the different choices of colours and forms with the different scores. It will have a short time to see what are the highest score and then screen will change. There will be the different forms with colours, player will have 3 choices to do in 4 seconds getting a score from the taken choices. 
 
 ## Backlog
- - CSS and HTML of the start screen.
- - Funtions destroyStartScreen and lunchGameScreen once Start buttom is click.
- - Game, Player, Object clases.
- - Funtions to generate random Object and color.
- - Funtions to count scores and countdown time.
- - CSS and HTML for Game screen.
- - Funtions destroyGameScreen and lunchGoScreen once time is over.
- - Funtions destroyGoScreen and lunchStartScreen once Restart buttom is click.
+### Choose score.
+- Choose randomly the score for the objects a colour.
+
+### Print in the screen.
+- Print in the screen the objects and colours that had been choose randomly.
+
+### Time/choices.
+- Player will have a limit time and number of choices to do.
+
+### New score.
+- Second scores in advance won’t be random. They will depend on the previous user choices.
+
+### Final scree.
+- Final screen will show the total score and the user most chosen objects and colors. 
+
+## Data structure
+### Game
+--- JS 
+	Function Game(score, ){
+
+	figures
+	position
+	score
+	timeOut
+	clickOut
+	}
+	ClearScores()
+	drawScores()
+	ClearGame()
+	drawGame()
+	start()
+	randomFigures()
+	timeOut()
+	scoreCounter()
+	figureChooser()
+
+### Figures
+----JS
+	Function Figures (){
+    
+		colour
+		position
+		shape
+	}
+	draw()
+
 
 ## States y States Transitions
-=======
-#Brainy Game
-##Description
-Simple game base on DOM and CSS. 
-The main objective of the game is to give the player a score related to speed and mental agility, doing simple mathematical calculations and choosing the objects with the highest score.
-
-##MVP (DOM)
->>>>>>> 9a1a86d3c3884d7e7cfe71fbb5d632bfa43c62cc
-- Start screen.
-  - Start buttom to take you game screen.
-  - Funtion to destroy start screen and launch game screen.
-- Game screen.
-  - Score.
-  - Grid where print the figures.
-  - Top bar with the figures, colors and values.
-  - Time counter.
-  - Funtion to destroy game screen and launch game over.
-- Game over screen.
-  - Score.
-  - Player profile.
-  - Restart buttom.
-  - Funtion to destroy Game over screen and launch game screen.
-  - Finish buttom.
-<<<<<<< HEAD
-  
-## SplashScreen
-gameScreen
-gameoverScreen
-
-## Task
-=======
-
-##Backlog
- - CSS and HTML of the start screen.
- - Funtions destroyStartScreen and lunchGameScreen once Start buttom is click.
- - Game, Player, Object clases.
- - Funtions to generate random Object and color.
- - Funtions to count scores and countdown time.
- - CSS and HTML for Game screen.
- - Funtions destroyGameScreen and lunchGoScreen once time is over.
- - Funtions destroyGoScreen and lunchStartScreen once Restart buttom is click.
-
-##States y States Transitions
 Definition of the different states and their transition (transition functions)
 
-splashScreen
-gameScreen
-gameoverScreen
+### SplashScreen
+- Start screen.
+- Start button to take you game screen.
+- Function to destroy start screen and launch game screen.
+### GameScreen
+- Game screen.
+- Score.
+- Grid where print the figures.
+- Top bar with the figures, colours and values.
+- Time counter.
+- Function to destroy game screen and launch game over.
+### GameoverScreen
+- Game over screen.
+- Score.
+- Player profile.
+- Restart button.
+- Function to destroy Game over screen and launch game screen.
+- Finish button.
 
-##Task
->>>>>>> 9a1a86d3c3884d7e7cfe71fbb5d632bfa43c62cc
- - Choose project.
- - Decide technology.
- - Create folders.
- - Create GITHUB repositoy.
- - Readme.txt.
- - Desing functional structure.
- - Create HTML and CSS.
- - Create Js Clases and funtions.
- - Test.
- - Impruve.
+## Task
+- Choose project.
+- Decide technology.
+- Create folders.
+- Create GITHUB repository.
+- Readme.txt.
+- Design functional structure.
+- Create HTML and CSS.
+- Create Js Classes and functions.
+- Test.
+- Improve.
 
-<<<<<<< HEAD
 ## Links
 https://trello.com/b/t8CO6kLh/juego-dom
 
@@ -88,13 +95,4 @@ https://trello.com/b/t8CO6kLh/juego-dom
 https://github.com/mavericucu/brain-game
 
 ## Slides
-=======
-##Links
-https://trello.com/b/t8CO6kLh/juego-dom
-
-##Git
-https://github.com/mavericucu/brain-game
-
-##Slides
->>>>>>> 9a1a86d3c3884d7e7cfe71fbb5d632bfa43c62cc
 URls for the project presentation (slides) Link Slides.com
