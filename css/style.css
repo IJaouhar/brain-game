@@ -18,9 +18,9 @@ body, ul {
   flex-direction: column;
   margin-top: 5rem;
   margin-bottom: 5rem;
-  min-width: 80vw;
   min-height: 80vh;
   background-color: #F4B4D7;
+  width: 100%;
 }
 
 h1 {  
@@ -31,15 +31,14 @@ h1 {
 
 .container a{
   color: black;
-  background-color: white;
+  background-color: rgb(255,255,255, 0.7);
   border-radius: 10px;
   height: 50px;
-  font-size: 2rem;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
   text-decoration: none;
   text-align: center;
-  width: 300px; 
+  width: 200px;
+  padding-top: 4px; 
 }
 
 .buttoms {
