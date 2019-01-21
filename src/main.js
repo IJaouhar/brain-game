@@ -1,7 +1,6 @@
 "use strict";
 
 function main() {
-  
   var splashScreen;
   var instructionScreen;
   var endScreen;
@@ -76,6 +75,7 @@ function main() {
     var game = new Game();
     
     function buildPointsScreen() {
+      
       pointsScreen = buildDom(`<h2>REMEMBER!!</h2>
       <p>Choose the combinations with the highest score and remember the shapes for the next game.</p>
       <div class="instruction-box">
@@ -98,9 +98,8 @@ function main() {
           </div>
         </div>
       </div>
-      <div id="count-down">2</div>`);
+      <div class="count-down">4</div>`);
       
-      var counter = document.getElementById("count-down");
     }
     
     function buildGameScreen() {
@@ -115,13 +114,10 @@ function main() {
         <div class = "rhombus"></div>
         <div class = "colour-box yellow-box"></div>
       </div>
-      <div id="count-down">2</div>`);
-      console.log('Build GAME')
-  
-      var counter = document.getElementById("count-down");
+      <div class="count-down">4</div>`);
     }
 
-    game.setCallbacks(buildGameScreen, buildPointsScreen, buildEndScreen)
+    game.setCallbacks(buildGameScreen, buildPointsScreen, buildEndScreen);
     game.start();
   }
   
