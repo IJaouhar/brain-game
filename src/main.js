@@ -7,6 +7,7 @@ function main() {
   var pointsScreen;
   var gameScreen;
   
+  
   function playClick() {
     buildInstructionScreen();
   }
@@ -73,32 +74,34 @@ function main() {
   function setGameScreens() {
 
     var game = new Game();
-    
-    function buildPointsScreen() {
+    var shapes = game.randomShapes();
+    console.log(shapes)
+    function buildPointsScreen(counter) {
+      console.log(counter)
       
       pointsScreen = buildDom(`<h2>REMEMBER!!</h2>
       <p>Choose the combinations with the highest score and remember the shapes for the next game.</p>
       <div class="instruction-box">
         <div class="points-box">
-          <div class = "box">
+          <div class=${shapes[0+counter]}>
             <span class="points"></span>
           </div>
-          <div class = "colour-box blue-box">
+          <div class="colour-box">
             <span class="points"></span>
           </div>
-          <div class = "hexagon">
+          <div class=${shapes[1+counter]}>
             <span class="points"></span>
           </div>
-          <div class = "colour-box pink-box">
+          <div class="colour-box">
             <span class="points"></span>
           </div>
-          <div class = "rhombus"></div>
-          <div class = "colour-box yellow-box">
+          <div class=${shapes[2+counter]}></div>
+          <div class="colour-box">
             <span class="points"></span>
           </div>
         </div>
       </div>
-      <div class="count-down">4</div>`);
+      <div class="count-down">10</div>`);
       
     }
     
@@ -114,7 +117,7 @@ function main() {
         <div class = "rhombus"></div>
         <div class = "colour-box yellow-box"></div>
       </div>
-      <div class="count-down">4</div>`);
+      <div class="count-down">10</div>`);
     }
 
     game.setCallbacks(buildGameScreen, buildPointsScreen, buildEndScreen);
