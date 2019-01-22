@@ -24,7 +24,7 @@ function main() {
   function buildSplashScreen() {
     splashScreen = buildDom(`
       <h1>BRAINY GAME</h1>
-      <img src="../PROYECTO BRAIN GAME/imagenes/logo.png" width="500px" height="auto">
+      <img src="imagenes/logo.png" width="500px" height="auto">
       <a href="#" class="button">Let's play!!</a>
       `);
   
@@ -61,7 +61,7 @@ function main() {
 
   function buildEndScreen() {
     endScreen = buildDom(`<h1>GAME HAS FINISHED</h1>
-    <img src="../PROYECTO BRAIN GAME/imagenes/logo.png" width="200px" height="auto">
+    <img src="imagenes/logo.png" width="200px" height="auto">
     <div class="buttons">
       <a href="#" id = "restar-button" class="button">Play again!!</a>
     </div>`);
