@@ -3,12 +3,12 @@
 function Game() {
   this.extClickCounter = 0;
   this.finishGame = 3;
-  this.countDown = 10;
+  this.countDown = 2;
   this.counter = 0;
   this.state = 'pointsScreen';
   this.shapes = ["box", "pentagon", "hexagon", "rhombus", "parallelo", "trapezo", "start", "right-arrow", "left-arrow", "cross"];
-  this.shapes = ["blue-box", "pink-box", "yellow-box"];
-
+  this.colours = ["blue-box", "pink-box", "yellow-box"];
+  this.gameShapes = [];
 };
 
 Game.prototype.start = function() {
@@ -19,16 +19,18 @@ Game.prototype.start = function() {
   setCountDown.innerText = this.countDown;
 
   if (this.countDown === 0) {
+    
     if (this.state === 'pointsScreen') {
       this.gameScreen();
       this.state = 'gameScreen'
-      this.countDown = 4;
-      this.finishGame--;
+      this.countDown = 2;
+      
       this.counter += 3;
     } else {
       this.pointsScreen(this.counter);
       this.state = 'pointsScreen'
-      this.countDown = 4;
+      this.countDown = 2;
+      this.finishGame--;
     }
   } else {
     this.countDown--;
@@ -43,7 +45,7 @@ Game.prototype.start = function() {
 
   }.bind(this),1000);
 
-  
+
 }
 
 
@@ -58,15 +60,38 @@ Game.prototype.randomShapes = function() {
   return this.shapes;
 }
 
-Game.prototype.randomShapes = function() {
+Game.prototype.randomColours = function() {
 
-  for (var i = this.shapes.length - 1; i > 0; i--) {
+  for (var i = this.colours.length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1));
-    var randomShapes = this.shapes[i];
-    this.shapes[i] = this.shapes[j];
-    this.shapes[j] = randomShapes;
+    var randomColours = this.colours[i];
+    this.colours[i] = this.colours[j];
+    this.colours[j] = randomColours;
   };
-  return this.shapes;
+  return this.colours;
+}
+
+Game.prototype.randomGame = function() {
+  if (this.counter === 0){
+    for (var i = 0; i < 9; i++) {
+      this.gameShapes.push(Math.floor(Math.random() * 3));
+    }
+  }
+  if (this.counter === 3){
+    this.gameShapes = [];
+    for (var i = 0; i < 9; i++) {
+      this.gameShapes.push(Math.floor(Math.random() * 6))
+      console.log('holaa');
+    }
+  }
+  if (this.counter === 6){
+    this.gameShapes = [];
+      this.gameShapes.push(Math.floor(Math.random() * 6))
+    for (var i = 0; i < 9; i++) {
+      this.gameShapes.push(Math.floor(Math.random() * 9))
+    }
+  }
+  return this.gameShapes;
 }
 
 Game.prototype.callGameScreen = function(setGameCallback) {

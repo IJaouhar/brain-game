@@ -75,10 +75,9 @@ function main() {
 
     var game = new Game();
     var shapes = game.randomShapes();
-    console.log(shapes)
     function buildPointsScreen(counter) {
-      console.log(counter)
-      
+      var colours = game.randomColours();
+
       pointsScreen = buildDom(`<h2>REMEMBER!!</h2>
       <p>Choose the combinations with the highest score and remember the shapes for the next game.</p>
       <div class="instruction-box">
@@ -86,38 +85,40 @@ function main() {
           <div class=${shapes[0+counter]}>
             <span class="points"></span>
           </div>
-          <div class="colour-box">
+          <div class="colour-box ${colours[0]}">
             <span class="points"></span>
           </div>
           <div class=${shapes[1+counter]}>
-            <span class="points"></span>
+            <span class="points "></span>
           </div>
-          <div class="colour-box">
+          <div class="colour-box ${colours[1]}">
             <span class="points"></span>
           </div>
           <div class=${shapes[2+counter]}></div>
-          <div class="colour-box">
+          <div class="colour-box ${colours[2]}">
             <span class="points"></span>
           </div>
         </div>
       </div>
-      <div class="count-down">10</div>`);
+      <div class="count-down">2</div>`);
       
     }
     
     function buildGameScreen() {
+      var figures = game.randomGame();
       gameScreen = buildDom(`<h2>Choose 3 to get the highest score</h2>
       <div class="game-box">
-        <div class = "box"></div>
-        <div class = "colour-box blue-box"></div>
-        <div class = "hexagon"></div>
-        <div class = "rhombus"></div>
-        <div class = "colour-box yellow-box"></div>
-        <div class = "colour-box pink-box"></div>
-        <div class = "rhombus"></div>
-        <div class = "colour-box yellow-box"></div>
+        <div class = ${shapes[figures[0]]}></div>
+        <div class = ${shapes[figures[1]]}></div>
+        <div class = ${shapes[figures[2]]}></div>
+        <div class = ${shapes[figures[3]]}></div>
+        <div class = ${shapes[figures[4]]}></div>
+        <div class = ${shapes[figures[5]]}></div>
+        <div class = ${shapes[figures[6]]}></div>
+        <div class = ${shapes[figures[7]]}></div>
+        <div class = ${shapes[figures[8]]}></div>
       </div>
-      <div class="count-down">10</div>`);
+      <div class="count-down">2</div>`);
     }
 
     game.setCallbacks(buildGameScreen, buildPointsScreen, buildEndScreen);
