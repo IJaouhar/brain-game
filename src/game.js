@@ -9,6 +9,7 @@ function Game() {
   this.shapes = ["box", "pentagon", "hexagon", "rhombus", "parallelo", "trapezo", "start", "right-arrow", "left-arrow", "cross"];
   this.colours = ["blue-box", "pink-box", "yellow-box"];
   this.gameShapes = [];
+  this.gameColours = [];
 };
 
 Game.prototype.start = function() {
@@ -92,6 +93,13 @@ Game.prototype.randomGame = function() {
     }
   }
   return this.gameShapes;
+}
+
+Game.prototype.randomColoursGame = function() {
+    for (var i = 0; i < 9; i++) {
+      this.gameColours.push(Math.floor(Math.random() * 3));
+    }
+  return this.gameColours;
 }
 
 Game.prototype.callGameScreen = function(setGameCallback) {

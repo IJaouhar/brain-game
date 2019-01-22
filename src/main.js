@@ -106,19 +106,26 @@ function main() {
     
     function buildGameScreen() {
       var figures = game.randomGame();
+      var colour = game.randomColoursGame();
+      var colours = game.randomColours();
       gameScreen = buildDom(`<h2>Choose 3 to get the highest score</h2>
       <div class="game-box">
-        <div class = ${shapes[figures[0]]}></div>
-        <div class = ${shapes[figures[1]]}></div>
-        <div class = ${shapes[figures[2]]}></div>
-        <div class = ${shapes[figures[3]]}></div>
-        <div class = ${shapes[figures[4]]}></div>
-        <div class = ${shapes[figures[5]]}></div>
-        <div class = ${shapes[figures[6]]}></div>
-        <div class = ${shapes[figures[7]]}></div>
-        <div class = ${shapes[figures[8]]}></div>
+        <div class = ${shapes[figures[0]]} class = ${colours[colour[0]]}></div>
+        <div class = ${shapes[figures[1]]} ${colours[colour[1]]}></div>
+        <div class = ${shapes[figures[2]]} ${colours[colour[2]]}></div>
+        <div class = ${shapes[figures[3]]} ${colours[colour[3]]}></div>
+        <div class = ${shapes[figures[4]]} ${colours[colour[4]]}></div>
+        <div class = ${shapes[figures[5]]} ${colours[colour[5]]}></div>
+        <div class = ${shapes[figures[6]]} ${colours[colour[6]]}></div>
+        <div class = ${shapes[figures[7]]} ${colours[colour[7]]}></div>
+        <div class = ${shapes[figures[8]]} ${colours[colour[8]]}></div>
       </div>
       <div class="count-down">2</div>`);
+      // backGroundColor();
+      // function backGroundColor(){
+      //   document.getElementById('hexagon').style.backgroundColor="red";
+      // }
+      
     }
 
     game.setCallbacks(buildGameScreen, buildPointsScreen, buildEndScreen);
