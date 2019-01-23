@@ -3,7 +3,7 @@
 function Game() {
   this.extClickCounter = 0;
   this.finishGame = 3;
-  this.countDown = 2;
+  this.countDown = 7;
   this.counter = 0;
   this.state = 'pointsScreen';
   this.shapes = ["box", "pentagon", "hexagon", "rhombus", "parallelo", "trapezo", "start", "right-arrow", "left-arrow", "cross"];
@@ -87,7 +87,7 @@ Game.prototype.randomColours = function() {
     var coloursAndScores = {
       colours: this.colours,
       colourScore: this.colourScore,
-      
+
     }
   }
 return coloursAndScores;

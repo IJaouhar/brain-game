@@ -104,7 +104,7 @@ function main() {
           </div>
         </div>
       </div>
-      <div class="count-down">2</div>`);
+      <div class="count-down">7</div>`);
  
     }
     function onClickWorks() {
@@ -127,12 +127,22 @@ function main() {
         <div id="click" class="${shapes[figures[7]]} ${colours[colour[7]]}"></div>
         <div id="click" class="${shapes[figures[8]]} ${colours[colour[8]]}"></div>
       </div>
-      <div class="count-down">2</div>`);
+      <div class="count-down">7</div>`);
 
       var clickFigures = gameScreen.querySelectorAll('#click');
       clickFigures.forEach(function(item) {
         item.addEventListener('click', onClickWorks);
       })
+      var counter = 0;
+
+      function onClickWorks(event) {
+        if (counter < 3){
+          counter++;
+          var score = 0;
+
+          console.log(event.target.classList[1]);
+        }
+      }
     }
 
     game.setCallbacks(buildGameScreen, buildPointsScreen, buildEndScreen);
