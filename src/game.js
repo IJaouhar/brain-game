@@ -10,6 +10,8 @@ function Game() {
   this.colours = ["blue-box", "pink-box", "yellow-box"];
   this.gameShapes = [];
   this.gameColours = [];
+  this.shapeScore = [];
+  this.colourScore = [];
 };
 
 Game.prototype.start = function() {
@@ -49,7 +51,7 @@ Game.prototype.start = function() {
 
 }
 
-
+// Create arrays with random positions. 
 Game.prototype.randomShapes = function() {
 
   for (var i = this.shapes.length - 1; i > 0; i--) {
@@ -61,17 +63,37 @@ Game.prototype.randomShapes = function() {
   return this.shapes;
 }
 
+
+Game.prototype.randomColourScore = function(){
+  for (var i = 0; i < 3; i++) {
+    this.colourScore.push(Math.floor(Math.random() * 10) + 1);
+  }
+  return this.colourScore;
+} 
+
+
 Game.prototype.randomColours = function() {
 
   for (var i = this.colours.length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1));
     var randomColours = this.colours[i];
+    var randomScore = this.colourScore[i];
     this.colours[i] = this.colours[j];
     this.colours[j] = randomColours;
-  };
-  return this.colours;
+
+    this.colourScore[i] = this.colourScore[j];
+    this.colourScore[j] = randomScore;
+
+    var coloursAndScores = {
+      colours: this.colours,
+      colourScore: this.colourScore,
+      
+    }
+  }
+return coloursAndScores;
 }
 
+// Add each loop 3 new shapes.
 Game.prototype.randomGame = function() {
   if (this.counter === 0){
     for (var i = 0; i < 9; i++) {
@@ -82,7 +104,6 @@ Game.prototype.randomGame = function() {
     this.gameShapes = [];
     for (var i = 0; i < 9; i++) {
       this.gameShapes.push(Math.floor(Math.random() * 6))
-      console.log('holaa');
     }
   }
   if (this.counter === 6){
@@ -94,12 +115,19 @@ Game.prototype.randomGame = function() {
   }
   return this.gameShapes;
 }
-
+// Place colors random on screen.
 Game.prototype.randomColoursGame = function() {
     for (var i = 0; i < 9; i++) {
       this.gameColours.push(Math.floor(Math.random() * 3));
     }
   return this.gameColours;
+}
+// scores
+Game.prototype.randomShapeScore = function(){
+  for (var i = 0; i < 9; i++) {
+    this.shapeScore.push(Math.floor(Math.random() * 10) + 1);
+  }
+  return this.shapeScore;
 }
 
 Game.prototype.callGameScreen = function(setGameCallback) {

@@ -42,7 +42,7 @@ function main() {
           <div class = "pentagon"></div>
           <div class = "hexagon"></div>
           <div class = "right-arrow"></div>
-          <div class = "crost"></div>
+          <div class = "cross"></div>
           <div class = "left-arrow"></div>
           <div class = "start"></div>
           <div class = "rhombus"></div>
@@ -75,57 +75,64 @@ function main() {
 
     var game = new Game();
     var shapes = game.randomShapes();
-    function buildPointsScreen(counter) {
-      var colours = game.randomColours();
+    game.randomColourScore();
 
+    function buildPointsScreen(counter) {
+      var {colours, colourScore} = game.randomColours();
+      var shapeScore = game.randomShapeScore();
       pointsScreen = buildDom(`<h2>REMEMBER!!</h2>
       <p>Choose the combinations with the highest score and remember the shapes for the next game.</p>
       <div class="instruction-box">
         <div class="points-box">
           <div class=${shapes[0+counter]}>
-            <span class="points"></span>
+          <span class="points">${shapeScore[0+counter]}</span>
           </div>
           <div class="colour-box ${colours[0]}">
-            <span class="points"></span>
+            <span class="points">${colourScore[0]}</span>
           </div>
           <div class=${shapes[1+counter]}>
-            <span class="points "></span>
+            <span class="points ">${shapeScore[1+counter]}</span>
           </div>
           <div class="colour-box ${colours[1]}">
-            <span class="points"></span>
+            <span class="points">${colourScore[1]}</span>
           </div>
-          <div class=${shapes[2+counter]}></div>
+          <div class=${shapes[2+counter]}>
+            <span class="points">${shapeScore[2+counter]}</span>
+          </div>
           <div class="colour-box ${colours[2]}">
-            <span class="points"></span>
+            <span class="points">${colourScore[2]}</span>
           </div>
         </div>
       </div>
       <div class="count-down">2</div>`);
-      
+ 
+    }
+    function onClickWorks() {
+      console.log("hey");
     }
     
     function buildGameScreen() {
       var figures = game.randomGame();
       var colour = game.randomColoursGame();
-      var colours = game.randomColours();
+      var {colours} = game.randomColours();
       gameScreen = buildDom(`<h2>Choose 3 to get the highest score</h2>
       <div class="game-box">
-        <div class = ${shapes[figures[0]]} class = ${colours[colour[0]]}></div>
-        <div class = ${shapes[figures[1]]} ${colours[colour[1]]}></div>
-        <div class = ${shapes[figures[2]]} ${colours[colour[2]]}></div>
-        <div class = ${shapes[figures[3]]} ${colours[colour[3]]}></div>
-        <div class = ${shapes[figures[4]]} ${colours[colour[4]]}></div>
-        <div class = ${shapes[figures[5]]} ${colours[colour[5]]}></div>
-        <div class = ${shapes[figures[6]]} ${colours[colour[6]]}></div>
-        <div class = ${shapes[figures[7]]} ${colours[colour[7]]}></div>
-        <div class = ${shapes[figures[8]]} ${colours[colour[8]]}></div>
+        <div id="click" class="${shapes[figures[0]]} ${colours[colour[0]]}"></div>
+        <div id="click" class="${shapes[figures[1]]} ${colours[colour[1]]}"></div>
+        <div id="click" class="${shapes[figures[2]]} ${colours[colour[2]]}"></div>
+        <div id="click" class="${shapes[figures[3]]} ${colours[colour[3]]}"></div>
+        <div id="click" class="${shapes[figures[4]]} ${colours[colour[4]]}"></div>
+        <div id="click" class="${shapes[figures[5]]} ${colours[colour[5]]}"></div>
+        <div id="click" class="${shapes[figures[6]]} ${colours[colour[6]]}"></div>
+        <div id="click" class="${shapes[figures[7]]} ${colours[colour[7]]}"></div>
+        <div id="click" class="${shapes[figures[8]]} ${colours[colour[8]]}"></div>
       </div>
       <div class="count-down">2</div>`);
-      // backGroundColor();
-      // function backGroundColor(){
-      //   document.getElementById('hexagon').style.backgroundColor="red";
-      // }
-      
+
+      var clickFigures = gameScreen.querySelectorAll('#click');
+      clickFigures.forEach(function(item) {
+        item.addEventListener('click', onClickWorks);
+      })
     }
 
     game.setCallbacks(buildGameScreen, buildPointsScreen, buildEndScreen);

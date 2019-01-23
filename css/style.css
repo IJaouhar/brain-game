@@ -54,6 +54,12 @@ p{
   grid-column-gap: 50px;
 }
 
+.points {
+  vertical-align: middle;
+  line-height: 110px;
+  font-size: 3rem;
+}
+
 .game-box {
   width: 700px;
   text-align: center;
@@ -111,17 +117,6 @@ h2 {
   border-radius: 5px;
 }
 
-.pink-box {
-  background-color: rgb(255,20,147);
-}
-
-.blue-box {
-  background-color: rgb(0,191,255);
-}
-
-.yellow-box {
-  background-color: rgb(255,255,0);
-}
 
 .box {
   margin: 0 auto;
@@ -209,5 +204,17 @@ h2 {
   background-color: white;
   -webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
   clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+}
+
+.pink-box {
+  background-color: rgb(255,20,147);
+}
+
+.blue-box {
+  background-color: rgb(0,191,255);
+}
+
+.yellow-box {
+  background-color: rgb(255,255,0);
 }
 
