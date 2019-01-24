@@ -3,7 +3,7 @@
 function Game() {
   this.extClickCounter = 0;
   this.finishGame = 3;
-  this.countDown = 7;
+  this.countDown = 2;
   this.counter = 0;
   this.state = 'pointsScreen';
   this.shapes = ["box", "pentagon", "hexagon", "rhombus", "parallelo", "trapezo", "start", "right-arrow", "left-arrow", "cross"];
@@ -12,28 +12,42 @@ function Game() {
   this.gameColours = [];
   this.shapeScore = [];
   this.colourScore = [];
+  this.shapesObject = [
+    {shape:"box", score:3},
+    {shape:"pentagon", score:2},
+    {shape:"hexagon", score:1},
+    {shape:"rhombus", score:4},
+    {shape:"parallelo", score:5},
+    {shape:"trapezo", score:6},
+    {shape:"start", score:7},
+    {shape:"right-arrow", score:8},
+    {shape:"cross", score:9}
+  ];
+  this.colorObject =[];
+  this.score = 0;
+  this.arrMax = [];
+  this.maxiScore = 0;
 };
 
 Game.prototype.start = function() {
   this.pointsScreen(this.counter);
-  
   var myvar = setInterval(function() {
   var setCountDown = document.querySelector(".count-down")
   setCountDown.innerText = this.countDown;
 
   if (this.countDown === 0) {
-    
+
     if (this.state === 'pointsScreen') {
       this.gameScreen();
       this.state = 'gameScreen'
       this.countDown = 2;
       
-      this.counter += 3;
     } else {
       this.pointsScreen(this.counter);
       this.state = 'pointsScreen'
       this.countDown = 2;
       this.finishGame--;
+      this.counter += 3;
     }
   } else {
     this.countDown--;
@@ -42,6 +56,7 @@ Game.prototype.start = function() {
   if(this.finishGame === 0) {
   clearInterval(myvar);
   this.buildEndScreen();
+  this.calculateHighScore();
 
   }
   setCountDown.innerText = this.countDown;
@@ -51,30 +66,53 @@ Game.prototype.start = function() {
 
 }
 
-// Create arrays with random positions. 
+// // Create arrays with random positions.
+// Game.prototype.randomShapes = function() {
+
+//   for (var i = this.shapes.length - 1; i > 0; i--) {
+//     var j = Math.floor(Math.random() * (i + 1));
+//     var randomShapes = this.shapes[i];
+//     this.shapes[i] = this.shapes[j];
+//     this.shapes[j] = randomShapes;
+//   };
+//   return this.shapes;
+// }
+
 Game.prototype.randomShapes = function() {
 
-  for (var i = this.shapes.length - 1; i > 0; i--) {
+  for (var i = this.shapesObject.length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1));
-    var randomShapes = this.shapes[i];
-    this.shapes[i] = this.shapes[j];
-    this.shapes[j] = randomShapes;
+    var randomShapes = this.shapesObject[i].shape;
+    this.shapesObject[i].shape = this.shapesObject[j].shape;
+    this.shapesObject[j].shape = randomShapes;
+
+    var x = Math.floor(Math.random() * (i + 1));
+    var randomScore = this.shapesObject[i].score;
+    this.shapesObject[i].score = this.shapesObject[j].score;
+    this.shapesObject[x].score = randomScore;
   };
-  return this.shapes;
+  return this.shapesObject;
 }
 
+
+
+// Game.prototype.randomColourScore = function(){
+//   for (var i = 0; i < 3; i++) {
+//     this.colourScore.push(Math.floor(Math.random() * 10) + 1);
+//   }
+//   return this.colourScore;
+// }
 
 Game.prototype.randomColourScore = function(){
   for (var i = 0; i < 3; i++) {
     this.colourScore.push(Math.floor(Math.random() * 10) + 1);
   }
   return this.colourScore;
-} 
+}
 
 
 Game.prototype.randomColours = function() {
-
-  for (var i = this.colours.length - 1; i > 0; i--) {
+  for (var i = 0; i < this.colours.length ; i++) {
     var j = Math.floor(Math.random() * (i + 1));
     var randomColours = this.colours[i];
     var randomScore = this.colourScore[i];
@@ -84,13 +122,13 @@ Game.prototype.randomColours = function() {
     this.colourScore[i] = this.colourScore[j];
     this.colourScore[j] = randomScore;
 
-    var coloursAndScores = {
-      colours: this.colours,
-      colourScore: this.colourScore,
-
+    var colorObject = {
+      colour: this.colours[j],
+      score: this.colourScore[j]
     }
+    this.colorObject[i] = colorObject;
   }
-return coloursAndScores;
+  return this.colorObject;
 }
 
 // Add each loop 3 new shapes.
@@ -129,6 +167,26 @@ Game.prototype.randomShapeScore = function(){
   }
   return this.shapeScore;
 }
+
+Game.prototype.caculateScore = function(shapeScore, colourScore) {
+  this.score += shapeScore + colourScore;
+  console.log(this.score);
+}
+
+Game.prototype.maxScore = function(max) {
+  this.arrMax.push(max);
+}
+
+Game.prototype.calculateHighScore = function() {
+  this.arrMax.sort(function(a,b){return b - a});
+  this.arrMax = this.arrMax.slice(0, 10);
+  this.maxiScore = this.arrMax.reduce(function(a, b){ return a + b; });
+  var maxUserScore = document.querySelector(".your-score")
+  setscore.innerText = this.score;
+  var maxScore = document.querySelector(".max-score")
+  setmaxScore.innerText = this.maxScore;
+}
+
 
 Game.prototype.callGameScreen = function(setGameCallback) {
   this.gameScreen = setGameCallback;

@@ -59,6 +59,33 @@ p{
   line-height: 110px;
   font-size: 3rem;
 }
+.sum-points {
+  vertical-align: middle;
+  line-height: 110px;
+  font-size: 1.5rem;
+}
+
+.bluebox-demo {
+ background-image: url('../imagenes/blue.png');
+ background-size: contain;
+ background-repeat: no-repeat;
+ background-position: center center;
+}
+
+.yellowbox-demo {
+  background-image: url('../imagenes/yellow.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+ }
+
+ .pinkbox-demo {
+  background-image: url('../imagenes/pink.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+ }
+
 
 .game-box {
   width: 700px;
