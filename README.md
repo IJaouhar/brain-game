@@ -4,7 +4,7 @@ Simple game base on DOM and CSS.
 The main objective of the game is to give the player a score related to speed and mental agility, doing simple mathematical calculations and choosing the objects with the highest score.
 
 ## MVP (DOM)
-Player will receive a screen with the different choices of colours and forms with the different scores. It will have a short time to see what are the highest score and then screen will change. There will be the different forms with colours, player will have 3 choices to do in 4 seconds getting a score from the taken choices. 
+Player will receive a screen with the different choices of colours and shapes with the different scores. It will have a short time to see what are the highest score and then screen will change. There will be the different forms with colours, player will have 3 choices to do in 5 seconds getting a score from the taken choices. 
 
 ## Backlog
 ### Choose poinst.
