@@ -99,6 +99,30 @@ p{
 
 }
 
+.high-score {
+  text-align: center;
+  font-size: 2rem;
+  display: flex;
+}
+
+.user-score {
+  text-align: center;
+  font-size: 2rem;
+  display: flex;
+}
+
+.max-score {
+  margin-left: 1rem;
+  color: white;
+  font-size: 2.3rem;
+}
+
+.your-score {
+  margin-left: 1rem;
+  color: white;
+  font-size: 2.3rem;
+}
+
 h1 {  
   color: white;
   font-size: 5rem;
@@ -150,7 +174,12 @@ h2 {
   width: 110px;
   height: 110px;
   background-color: white;
+  transition: all 0.3s;
 }
+.box:hover {
+  transform: scale(1.2);
+}
+
 
 .pentagon {
   margin: 0 auto;
@@ -159,15 +188,25 @@ h2 {
   background-color: white;
   -webkit-clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
   clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  transition: all 1s;
 }
+.pentagon:hover {
+  transform: scale(1.2);
+}
+
 
 .hexagon {
   margin: 0 auto;
   width: 110px;
   height: 110px;
   background-color: white;
+  transition: all 0.3s;
   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.hexagon:hover {
+  transform: scale(1.2);
 }
 
 .rhombus {
@@ -175,8 +214,13 @@ h2 {
   width: 110px;
   height: 110px;
   background-color: white;
+  transition: all 0.3s;
   -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.rhombus:hover {
+  transform: scale(1.2);
 }
 
 .parallelo {
@@ -184,8 +228,13 @@ h2 {
   width: 110px;
   height: 110px;
   background-color: white;
+  transition: all 0.3s;
   -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+.parallelo:hover {
+  transform: scale(1.2);
 }
 
 .trapezo {
@@ -193,8 +242,13 @@ h2 {
   width: 110px;
   height: 110px;
   background-color: white;
+  transition: all 0.3s;
   -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
   clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+.trapezo:hover {
+  transform: scale(1.2);
 }
 
 .start {
@@ -202,8 +256,13 @@ h2 {
   width: 110px;
   height: 110px;
   background-color: white;
+  transition: all 0.3s;
   -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.start:hover {
+  transform: scale(1.2);
 }
 
 .right-arrow {
@@ -211,8 +270,13 @@ h2 {
   width: 110px;
   height: 110px;
   background-color: white;
+  transition: all 0.3s;
   -webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
   clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
+
+.right-arrow:hover {
+  transform: scale(1.2);
 }
 
 .left-arrow {
@@ -220,8 +284,13 @@ h2 {
   width: 110px;
   height: 110px;
   background-color: white;
+  transition: all 0.3s;
   -webkit-clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
   clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+}
+
+.left-arrow:hover {
+  transform: scale(1.2);
 }
 
 .cross {
@@ -229,8 +298,13 @@ h2 {
   width: 110px;
   height: 110px;
   background-color: white;
+  transition: all 0.3s;
   -webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
   clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+}
+
+.cross:hover {
+  transform: scale(1.2);
 }
 
 .pink-box {

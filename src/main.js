@@ -94,15 +94,20 @@ function main() {
   
 
 
-  function buildEndScreen() {
+  function buildEndScreen(score, maxiScore) {
     endScreen = buildDom(`<h1>GAME HAS FINISHED</h1>
+    <div class="high-score">The higher score you could get was:  
+      <div class="max-score">0</div></div>
     <img src="imagenes/logo.png" width="200px" height="auto">
+    <div class="user-score">Your score was:
+      <div class="your-score">0</div></div>
     <div class="buttons">
-    <div class="your-score">0</div>
-    <div class="max-score">0</div>
     <a href="#" id = "restart-button" class="button">Play again!!</a>
     </div>`);
-  
+    var userScore = document.querySelector(".your-score");
+    userScore.innerText = score;
+    var maxScore = document.querySelector(".max-score");
+    maxScore.innerText = maxiScore;
     endScreen
       .querySelector(".button")
       .addEventListener("click", buildSplashScreen);
@@ -123,24 +128,24 @@ function main() {
           <div class=${shapes[0+counter].shape}>
           <span class="points">${shapes[0+counter].score}</span>
           </div>
-          <div class="colour-box ${colours[0].colour}">
-            <span class="points">${colours[0].score}</span>
+          <div class=${shapes[2+counter].shape}>
+          <span class="points">${shapes[2+counter].score}</span>
           </div>
           <div class=${shapes[1+counter].shape}>
-            <span class="points ">${shapes[1+counter].score}</span>
+          <span class="points ">${shapes[1+counter].score}</span>
           </div>
           <div class="colour-box ${colours[1].colour}">
-            <span class="points">${colours[1].score}</span>
+          <span class="points">${colours[1].score}</span>
           </div>
-          <div class=${shapes[2+counter].shape}>
-            <span class="points">${shapes[2+counter].score}</span>
+          <div class="colour-box ${colours[0].colour}">
+            <span class="points">${colours[0].score}</span>
           </div>
           <div class="colour-box ${colours[2].colour}">
             <span class="points">${colours[2].score}</span>
           </div>
         </div>
       </div>
-      <div class="count-down">7</div>`);
+      <div class="count-down">10</div>`);
     }
     
     function buildGameScreen() {
@@ -159,7 +164,7 @@ function main() {
         <div id="click" class="${shapes[figures[7]].shape} ${colours[colour[7]].colour}" data-shape-score="${shapes[figures[7]].score}" data-colour-score="${colours[colour[7]].score}"></div>
         <div id="click" class="${shapes[figures[8]].shape} ${colours[colour[8]].colour}" data-shape-score="${shapes[figures[8]].score}" data-colour-score="${colours[colour[8]].score}"></div>
       </div>
-      <div class="count-down">7</div>`);
+      <div class="count-down">5</div>`);
 
       var clickFigures = gameScreen.querySelectorAll('#click');
       clickFigures.forEach(function(item) {

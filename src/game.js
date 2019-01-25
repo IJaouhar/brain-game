@@ -3,7 +3,7 @@
 function Game() {
   this.extClickCounter = 0;
   this.finishGame = 3;
-  this.countDown = 2;
+  this.countDown = 10;
   this.counter = 0;
   this.state = 'pointsScreen';
   this.shapes = ["box", "pentagon", "hexagon", "rhombus", "parallelo", "trapezo", "start", "right-arrow", "left-arrow", "cross"];
@@ -35,19 +35,20 @@ Game.prototype.start = function() {
   var setCountDown = document.querySelector(".count-down")
   setCountDown.innerText = this.countDown;
 
-  if (this.countDown === 0) {
+  if (this.countDown === 0 && this.finishGame) {
 
     if (this.state === 'pointsScreen') {
       this.gameScreen();
       this.state = 'gameScreen'
-      this.countDown = 2;
-      
-    } else {
-      this.pointsScreen(this.counter);
-      this.state = 'pointsScreen'
-      this.countDown = 2;
-      this.finishGame--;
+      this.countDown = 5;
       this.counter += 3;
+    } else {
+      if(this.counter < this.shapes.length-1) {
+        this.pointsScreen(this.counter);
+        this.state = 'pointsScreen'
+        this.countDown = 10;
+      }
+      this.finishGame--;
     }
   } else {
     this.countDown--;
@@ -55,8 +56,8 @@ Game.prototype.start = function() {
   }
   if(this.finishGame === 0) {
   clearInterval(myvar);
-  this.buildEndScreen();
   this.calculateHighScore();
+  this.buildEndScreen(this.score, this.maxiScore);
 
   }
   setCountDown.innerText = this.countDown;
@@ -181,10 +182,11 @@ Game.prototype.calculateHighScore = function() {
   this.arrMax.sort(function(a,b){return b - a});
   this.arrMax = this.arrMax.slice(0, 10);
   this.maxiScore = this.arrMax.reduce(function(a, b){ return a + b; });
-  var maxUserScore = document.querySelector(".your-score")
-  setscore.innerText = this.score;
-  var maxScore = document.querySelector(".max-score")
-  setmaxScore.innerText = this.maxScore;
+  console.log(this.maxiScore);
+  // var maxUserScore = document.querySelector(".your-score");
+  // this.score.innerText = this.score;
+  // var maxScore = document.querySelector(".max-score");
+  // setmaxScore.innerText = this.maxScore;
 }
 
 
